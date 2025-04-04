@@ -128,8 +128,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const clockElement = document.getElementById('clock');
         clockElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+        if(fechaActual.getDate() == 21 && (fechaActual.getMonth() == 2 || fechaActual.getMonth() == 8)){
+            document.querySelector('.flower-container').style.display = 'flex';
+        }else{
+            document.querySelector('.flower-container').style.display = 'none';
+        }
     }
 
     setInterval(updateClock, 1000);
     updateClock();
 });
+
